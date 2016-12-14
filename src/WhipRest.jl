@@ -4,7 +4,7 @@ using HttpServer
 
 include("beans.jl")
 
-  export ServerConfig, hello
+  export ServerConfig
 
 
   type ServerConfig
