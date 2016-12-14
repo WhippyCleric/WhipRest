@@ -8,6 +8,11 @@ include("beans.jl")
   export ServerConfig
 
 
+  type ServerConfig
+    path::String
+  end
+
+
   function hello(message::String)
     print(message)
   end
