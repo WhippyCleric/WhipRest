@@ -11,8 +11,8 @@ include("beans.jl")
     x
   end
 
-  function hello(message::String)
-    print(message)
-  end
+#  function hello(message::String)
+#    print(message)
+#  end
 
 end #end module WhipRest
