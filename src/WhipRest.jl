@@ -4,12 +4,11 @@ using HttpServer
 
 include("beans.jl")
 
-  export hello,
-         ServerConfig
+  export ServerConfig, hello
 
 
   type ServerConfig
-    path::String
+    x
   end
 
   function hello(message::String)
