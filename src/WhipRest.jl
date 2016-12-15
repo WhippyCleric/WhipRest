@@ -4,7 +4,7 @@ using HttpServer
 
 include("beans.jl")
 
-  export ServerConfig, ResponseConfig, WhipRestServer, GET, POST, createServer, startServer
+  export ServerConfig, ResponseConfig, WhipRestServer, GET, POST, PUT, PATCH, DELETE, createServer, startServer
 
 
   function createServer(config::ServerConfig)
@@ -77,7 +77,6 @@ include("beans.jl")
     end
   end
 
-
   function getHTTP_METHOD(method::String)
     if method == "GET"
       return GET
@@ -91,8 +90,6 @@ include("beans.jl")
       return DELETE
     end
   end
-
-
 
   function getMappings(whipServer::WhipRestServer, method::HTTP_METHOD)
     if GET == method
