@@ -32,7 +32,6 @@ include("beans.jl")
         responseHandler = mappings[String(path)]
         #Call the handler for this path with the content after the path
         params = getParams(req.resource)
-        println("DONNE")
         Response(responseHandler(RestMessage(params, req.data)))
       catch error
         if isa(error, KeyError)
