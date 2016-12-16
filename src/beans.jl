@@ -19,3 +19,9 @@ type WhipRestServer
   patchMappings::Dict{String,Any}
   deleteMappings::Dict{String,Any}
 end
+
+
+type RestMessage
+  uriParams::Dict{String, String}
+  body::String
+end

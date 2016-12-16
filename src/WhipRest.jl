@@ -4,7 +4,7 @@ using HttpServer
 
 include("beans.jl")
 
-  export ServerConfig, ResponseConfig, WhipRestServer, GET, POST, PUT, PATCH, DELETE, createServer, startServer
+  export ServerConfig, ResponseConfig, WhipRestServer, RestMessage, GET, POST, PUT, PATCH, DELETE, createServer, startServer
 
 
   function createServer(config::ServerConfig)
@@ -32,7 +32,8 @@ include("beans.jl")
         responseHandler = mappings[String(path)]
         #Call the handler for this path with the content after the path
         params = getParams(req.resource)
-        Response(responseHandler(params, ASCIIString(req.data)))
+        println("DONNE")
+        Response(responseHandler(RestMessage(params, req.data)))
       catch error
         if isa(error, KeyError)
            #No mapping was found for this path
